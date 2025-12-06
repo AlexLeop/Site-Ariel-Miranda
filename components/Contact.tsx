@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
                 <img 
                   src="https://cache2net3.com/Repositorio/19349/Logo/LOGO.png" 
                   alt="Ariel Miranda" 
-                  className="h-24 md:h-32 w-auto object-contain -ml-3 mb-2" 
+                  className="h-24 md:h-32 w-auto object-contain mb-2" 
                 />
               <p className="text-slate-400 text-sm leading-relaxed max-w-md font-light">
                 Compromisso com a verdade real. Serviços de perícia técnica com alto padrão de qualidade e rigor científico.

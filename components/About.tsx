@@ -4,7 +4,7 @@ import { SectionId } from '../types';
 
 const About: React.FC = () => {
   return (
-    <section id={SectionId.ABOUT} className="py-28 bg-white relative">
+    <section id={SectionId.ABOUT} className="py-28 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row gap-16 lg:gap-24 items-center">
           

@@ -13,7 +13,7 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-slate-50 relative">
+    <div className="min-h-screen flex flex-col font-sans bg-slate-50 relative overflow-x-hidden w-full">
       <div className="bg-noise"></div>
       <Header />
       <main className="flex-grow">
