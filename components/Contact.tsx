@@ -35,9 +35,11 @@ const Contact: React.FC = () => {
           <div className="space-y-12">
              <div className="flex flex-col space-y-6">
               <div className="flex flex-col">
-                <span className="font-heading font-extrabold text-3xl leading-none text-white tracking-tight">
-                  ARIEL MIRANDA
-                </span>
+                <img 
+                  src="https://cache2net3.com/Repositorio/19349/Logo/LOGO.png" 
+                  alt="Ariel Miranda" 
+                  className="h-12 w-auto object-contain self-start mb-2" 
+                />
                 <span className="text-[10px] uppercase tracking-[0.3em] text-gold-500 font-bold mt-2">
                   Engenharia e Perícias
                 </span>

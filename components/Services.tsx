@@ -18,7 +18,7 @@ const Services: React.FC = () => {
           </div>
           <div className="md:max-w-xs">
             <p className="text-slate-500 text-sm leading-relaxed border-l-2 border-gold-500 pl-4">
-               Atuação técnica precisa para elucidar questões sobre autenticidade gráfica e documental.
+               Soluções completas em Engenharia Elétrica, Segurança do Trabalho e Forense Digital.
             </p>
           </div>
         </div>

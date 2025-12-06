@@ -16,7 +16,7 @@ const FAQ: React.FC = () => {
         <div className="text-center mb-16 reveal">
           <h2 className="text-gold-600 font-bold uppercase tracking-[0.3em] text-xs mb-4">Tira-Dúvidas</h2>
           <h3 className="text-3xl md:text-4xl font-heading font-extrabold text-navy-900 mb-6">Perguntas Frequentes</h3>
-          <p className="text-slate-600">Esclareça as principais dúvidas sobre o processo de perícia grafotécnica e documental.</p>
+          <p className="text-slate-600">Esclareça as principais dúvidas sobre nossos serviços de perícia técnica e judicial.</p>
         </div>
 
         <div className="space-y-4">
