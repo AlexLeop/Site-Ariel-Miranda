@@ -33,17 +33,12 @@ const Contact: React.FC = () => {
           
           {/* Left Column: Contact Information */}
           <div className="space-y-12">
-             <div className="flex flex-col space-y-6">
-              <div className="flex flex-col">
+             <div className="flex flex-col space-y-4">
                 <img 
                   src="https://cache2net3.com/Repositorio/19349/Logo/LOGO.png" 
                   alt="Ariel Miranda" 
-                  className="h-12 w-auto object-contain self-start mb-2" 
+                  className="h-20 md:h-24 w-auto object-contain self-start" 
                 />
-                <span className="text-[10px] uppercase tracking-[0.3em] text-gold-500 font-bold mt-2">
-                  Engenharia e Perícias
-                </span>
-              </div>
               <p className="text-slate-400 text-sm leading-relaxed max-w-md font-light">
                 Compromisso com a verdade real. Serviços de perícia técnica com alto padrão de qualidade e rigor científico.
               </p>

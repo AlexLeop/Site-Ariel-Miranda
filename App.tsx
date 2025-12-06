@@ -10,7 +10,6 @@ import FAQ from './components/FAQ';
 import ClientFeedback from './components/ClientFeedback';
 import CTA from './components/CTA';
 import Contact from './components/Contact';
-import ParallaxDivider from './components/ParallaxDivider';
 
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
         <Process />
         <Testimonials /> 
         <FAQ />
-        <ParallaxDivider />
         <ClientFeedback />
         <CTA />
       </main>
