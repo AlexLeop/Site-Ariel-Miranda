@@ -1,6 +1,7 @@
 import React from 'react';
 import { SERVICES } from '../constants';
 import { SectionId } from '../types';
+import { Check } from 'lucide-react';
 
 const Services: React.FC = () => {
   return (
@@ -33,17 +34,29 @@ const Services: React.FC = () => {
                  <service.icon size={36} className="text-gold-500 group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
               </div>
               
-              <h4 className="text-xl font-bold text-navy-900 mb-4 font-heading group-hover:text-gold-600 transition-colors">
+              <h4 className="text-xl font-bold text-navy-900 mb-2 font-heading group-hover:text-gold-600 transition-colors">
                 {service.title}
               </h4>
               
-              <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-grow opacity-80 group-hover:opacity-100 transition-opacity">
+              <p className="text-slate-600 text-sm leading-relaxed mb-6 opacity-80">
                 {service.description}
               </p>
+
+              {/* Feature List */}
+              <div className="mt-auto space-y-3 mb-8">
+                {service.features && service.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5">
+                    <div className="mt-1 w-3 h-3 rounded-full bg-gold-500/10 flex items-center justify-center flex-shrink-0">
+                      <Check size={8} className="text-gold-600" strokeWidth={3} />
+                    </div>
+                    <span className="text-xs text-slate-500 font-medium leading-tight">{feature}</span>
+                  </div>
+                ))}
+              </div>
               
-              <div className="pt-6 border-t border-slate-50 mt-auto">
+              <div className="pt-6 border-t border-slate-50">
                 <a href="#contact" className="inline-flex items-center gap-2 text-[10px] font-bold text-navy-900 uppercase tracking-widest group-hover:text-gold-600 transition-colors">
-                  Saiba Mais
+                  Solicitar Avaliação
                   <span className="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                 </a>
               </div>

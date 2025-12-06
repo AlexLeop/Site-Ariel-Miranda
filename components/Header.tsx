@@ -122,15 +122,15 @@ const Header: React.FC = () => {
 
       {/* Mobile Sidebar Overlay */}
       <div 
-        className={`fixed inset-0 bg-navy-950/80 backdrop-blur-sm z-50 transition-opacity duration-500 md:hidden ${
+        className={`fixed inset-0 bg-navy-950/60 backdrop-blur-sm z-50 transition-opacity duration-500 md:hidden ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
-      {/* Mobile Sidebar Drawer - GLASS EFFECT APPLIED HERE */}
+      {/* Mobile Sidebar Drawer */}
       <div 
-        className={`fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-white/90 backdrop-blur-md shadow-2xl z-50 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col border-l border-white/20 ${
+        className={`fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-white/80 backdrop-blur-xl shadow-2xl z-50 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col border-l border-white/40 ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -217,7 +217,7 @@ const Header: React.FC = () => {
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
         aria-label="Falar no WhatsApp"
       >
-        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-75 group-hover:scale-125 transition-transform duration-1000 ease-out"></span>
+        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-75 group-hover:scale-125 transition-transform duration-1000 ease-out animate-pulse"></span>
         <svg 
           viewBox="0 0 24 24" 
           width="30" 

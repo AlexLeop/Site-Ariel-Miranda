@@ -16,26 +16,50 @@ export const SERVICES: Service[] = [
   {
     id: '1',
     title: 'Engenharia Elétrica',
-    description: 'Laudos técnicos para disputas com concessionárias, análise de consumo, irregularidades e acidentes elétricos, com rigor técnico e normativo.',
-    icon: Zap
+    description: 'Laudos técnicos especializados para identificar causas de acidentes, falhas e irregularidades em sistemas elétricos.',
+    icon: Zap,
+    features: [
+      'Laudos para Concessionárias',
+      'Análise de Consumo e Fraudes',
+      'Investigação de Acidentes Elétricos',
+      'Vistoria de Instalações (NR-10)'
+    ]
   },
   {
     id: '2',
     title: 'Segurança do Trabalho',
-    description: 'Perícias de insalubridade e periculosidade, avaliação de riscos ocupacionais e conformidade com as Normas Regulamentadoras (NRs).',
-    icon: HardHat
+    description: 'Avaliação técnica de ambientes laborais para garantir conformidade com normas regulamentadoras e segurança jurídica.',
+    icon: HardHat,
+    features: [
+      'Laudos de Insalubridade (NR-15)',
+      'Laudos de Periculosidade (NR-16)',
+      'Elaboração de LTCAT e PPP',
+      'Assistência Técnica em Perícias'
+    ]
   },
   {
     id: '3',
     title: 'Forense Digital',
-    description: 'Coleta e análise de evidências digitais, validação de áudios, vídeos e documentos eletrônicos para uso como prova judicial.',
-    icon: Binary
+    description: 'Coleta, preservação e análise de evidências digitais para validação de provas em processos judiciais.',
+    icon: Binary,
+    features: [
+      'Verificação de Áudio e Vídeo',
+      'Autenticidade de Documentos Digitais',
+      'Análise de Metadados',
+      'Perícia em WhatsApp e E-mails'
+    ]
   },
   {
     id: '4',
     title: 'Cálculos Trabalhistas',
-    description: 'Liquidação de sentenças e assistência em processos trabalhistas, garantindo a exatidão dos valores pleiteados ou deferidos.',
-    icon: Calculator
+    description: 'Cálculos precisos para liquidação de sentenças e suporte técnico em demandas trabalhistas complexas.',
+    icon: Calculator,
+    features: [
+      'Liquidação de Sentença',
+      'Cálculos de Rescisão',
+      'Atualização Monetária',
+      'Pareceres Contábeis'
+    ]
   }
 ];
 

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { TESTIMONIALS } from '../constants';
 import { SectionId } from '../types';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -22,18 +22,12 @@ const ClientFeedback: React.FC = () => {
 
   const handleScroll = () => {
     if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const index = Math.round(scrollLeft / clientWidth);
-      // Determine index based on item width estimate (approximate for responsive)
-      // For simplicity in this UI, we just map scroll position relative to total width
-      const totalWidth = scrollRef.current.scrollWidth - clientWidth;
-      const progress = scrollLeft / totalWidth;
-      
-      // Update dots based on rough percentage if exact index is tricky with responsive items
-      // Or simply stick to the first visible item logic:
-      const itemWidth = scrollRef.current.children[0].clientWidth;
-      const newIndex = Math.round(scrollLeft / itemWidth);
-      setActiveIndex(newIndex);
+      const { scrollLeft, children } = scrollRef.current;
+      if (children.length > 0) {
+          const itemWidth = children[0].clientWidth;
+          const newIndex = Math.round(scrollLeft / itemWidth);
+          setActiveIndex(newIndex);
+      }
     }
   };
 
@@ -101,14 +95,13 @@ const ClientFeedback: React.FC = () => {
               <button
                 key={index}
                 onClick={() => {
-                  if (scrollRef.current) {
+                  if (scrollRef.current && scrollRef.current.children.length > 0) {
                     const itemWidth = scrollRef.current.children[0].clientWidth;
                     scrollRef.current.scrollTo({ left: itemWidth * index, behavior: 'smooth' });
                   }
                 }}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  // Logic to highlight dots broadly since multiple items are visible
-                  Math.abs(activeIndex - index) < (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1)
+                  activeIndex === index
                     ? 'w-6 bg-gold-500' 
                     : 'w-2 bg-slate-200 hover:bg-gold-300'
                 }`}
