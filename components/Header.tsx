@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, ArrowRight, Instagram, Linkedin, MessageCircle } from 'lucide-react';
 import { NAV_LINKS, CONTACT_INFO } from '../constants';
+import { SectionId } from '../types';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,7 +64,7 @@ const Header: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <a href="#" className="flex flex-col group cursor-pointer" aria-label="Ariel Miranda - Início">
+            <a href={`#${SectionId.HOME}`} className="flex flex-col group cursor-pointer" aria-label="Ariel Miranda - Início">
               <img 
                 src="https://cache2net3.com/Repositorio/19349/Logo/LOGO.png" 
                 alt="Ariel Miranda" 

@@ -216,8 +216,8 @@ const Contact: React.FC = () => {
             &copy; {new Date().getFullYear()} Ariel Miranda. Todos os direitos reservados.
           </p>
           <div className="flex gap-6">
-            <span className="cursor-pointer hover:text-gold-500 transition-colors">Política de Privacidade</span>
-            <span className="cursor-pointer hover:text-gold-500 transition-colors">Termos de Uso</span>
+            <a href="#" onClick={(e) => e.preventDefault()} className="cursor-pointer hover:text-gold-500 transition-colors">Política de Privacidade</a>
+            <a href="#" onClick={(e) => e.preventDefault()} className="cursor-pointer hover:text-gold-500 transition-colors">Termos de Uso</a>
           </div>
         </div>
       </div>

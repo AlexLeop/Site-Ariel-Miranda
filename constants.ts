@@ -7,6 +7,7 @@ export const NAV_LINKS = [
   { label: 'Serviços', href: `#${SectionId.SERVICES}` },
   { label: 'Como Funciona', href: `#${SectionId.PROCESS}` },
   { label: 'Diferenciais', href: `#${SectionId.TESTIMONIALS}` },
+  { label: 'Depoimentos', href: `#${SectionId.FEEDBACK}` },
   { label: 'Dúvidas', href: `#${SectionId.FAQ}` },
   { label: 'Contato', href: `#${SectionId.CONTACT}` },
 ];
