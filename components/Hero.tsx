@@ -1,51 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { ArrowRight, FileSignature, Scale, ShieldCheck, Zap } from 'lucide-react';
-import { GoogleGenAI } from '@google/genai';
+import React from 'react';
+import { ArrowRight, Scale, ShieldCheck, Zap } from 'lucide-react';
 import { SectionId } from '../types';
 
+// Imagem fixa para o background (Substitua por sua URL se necessário)
+// Esta imagem remete a engenharia elétrica e industrial
+const HERO_IMAGE = "https://images.unsplash.com/photo-1621905251189-08b95d50c79f?auto=format&fit=crop&q=80&w=1920";
+
 const Hero: React.FC = () => {
-  const [bgImage, setBgImage] = useState<string>('');
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const generateHeroImage = async () => {
-      try {
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-        const response = await ai.models.generateContent({
-          model: 'gemini-2.5-flash-image',
-          contents: {
-            parts: [{ text: 'Professional engineering office, close up on electrical blueprints, safety helmet, multimeter, and technical documents, cinematic lighting, professional atmosphere, gold and navy blue tones' }]
-          },
-          config: {
-            imageConfig: {
-              aspectRatio: '16:9'
-            }
-          }
-        });
-
-        const imagePart = response.candidates?.[0]?.content?.parts?.find(part => part.inlineData);
-        if (imagePart && imagePart.inlineData) {
-           setBgImage(`data:${imagePart.inlineData.mimeType};base64,${imagePart.inlineData.data}`);
-        }
-      } catch (e) {
-        console.error("Error generating hero image:", e);
-      } finally {
-        setIsLoaded(true);
-      }
-    };
-
-    generateHeroImage();
-  }, []);
-
   return (
     <section 
       id={SectionId.HOME} 
       className="relative min-h-[95vh] flex items-center pt-24 pb-20 overflow-hidden"
     >
-      {/* Background with Transition */}
+      {/* Background with Static Image */}
       <div 
-        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${!bgImage ? 'bg-hero-pattern' : ''}`}
-        style={bgImage ? { backgroundImage: `url('${bgImage}')` } : undefined}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-navy-950"
+        style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
       ></div>
       
       {/* Heavy Overlay for Legibility - Gradient Improved */}

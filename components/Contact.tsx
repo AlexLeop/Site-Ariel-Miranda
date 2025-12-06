@@ -33,17 +33,17 @@ const Contact: React.FC = () => {
           
           {/* Left Column: Contact Information */}
           <div className="space-y-12">
-             <div className="flex flex-col space-y-4">
+             <div className="flex flex-col items-start">
                 <img 
                   src="https://cache2net3.com/Repositorio/19349/Logo/LOGO.png" 
                   alt="Ariel Miranda" 
-                  className="h-20 md:h-24 w-auto object-contain self-start" 
+                  className="h-24 md:h-32 w-auto object-contain -ml-3 mb-2" 
                 />
               <p className="text-slate-400 text-sm leading-relaxed max-w-md font-light">
                 Compromisso com a verdade real. Serviços de perícia técnica com alto padrão de qualidade e rigor científico.
               </p>
               
-              <div className="pt-2">
+              <div className="pt-4">
                  <a 
                    href={`https://wa.me/55${CONTACT_INFO.whatsapp.replace(/\D/g, '')}`} 
                    target="_blank" 

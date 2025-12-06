@@ -48,8 +48,8 @@ const Header: React.FC = () => {
       <header 
         className={`fixed w-full z-40 transition-all duration-500 ${
           isScrolled 
-            ? 'top-0 bg-white/90 backdrop-blur-md shadow-lg py-3' 
-            : 'md:top-[38px] top-0 bg-white/95 md:bg-white py-5 shadow-sm md:shadow-none'
+            ? 'top-0 bg-white shadow-lg py-3' 
+            : 'md:top-[38px] top-0 bg-white/20 backdrop-blur-md py-5 shadow-none border-b border-white/10'
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
@@ -70,7 +70,9 @@ const Header: React.FC = () => {
               <a 
                 key={link.label}
                 href={link.href} 
-                className="relative text-xs font-bold text-navy-800 hover:text-gold-600 transition-colors uppercase tracking-widest py-2 group"
+                className={`relative text-xs font-bold uppercase tracking-widest py-2 group transition-colors ${
+                  isScrolled ? 'text-navy-800' : 'text-white'
+                } hover:text-gold-600`}
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
@@ -78,12 +80,14 @@ const Header: React.FC = () => {
             ))}
             
             {/* Social Icons */}
-            <div className="flex items-center gap-4 ml-4 pl-4 border-l border-slate-200">
+            <div className={`flex items-center gap-4 ml-4 pl-4 border-l ${isScrolled ? 'border-slate-200' : 'border-white/20'}`}>
                <a 
                  href={CONTACT_INFO.social.instagram}
                  target="_blank"
                  rel="noopener noreferrer"
-                 className="text-navy-900 hover:text-gold-600 transition-transform hover:-translate-y-0.5"
+                 className={`transition-transform hover:-translate-y-0.5 hover:text-gold-600 ${
+                   isScrolled ? 'text-navy-900' : 'text-white'
+                 }`}
                  aria-label="Instagram"
                >
                  <Instagram size={20} />
@@ -92,7 +96,9 @@ const Header: React.FC = () => {
                  href={CONTACT_INFO.social.linkedin}
                  target="_blank"
                  rel="noopener noreferrer"
-                 className="text-navy-900 hover:text-gold-600 transition-transform hover:-translate-y-0.5"
+                 className={`transition-transform hover:-translate-y-0.5 hover:text-gold-600 ${
+                   isScrolled ? 'text-navy-900' : 'text-white'
+                 }`}
                  aria-label="LinkedIn"
                >
                  <Linkedin size={20} />
@@ -101,7 +107,9 @@ const Header: React.FC = () => {
                  href={CONTACT_INFO.social.whatsapp}
                  target="_blank"
                  rel="noopener noreferrer"
-                 className="text-navy-900 hover:text-gold-600 transition-transform hover:-translate-y-0.5"
+                 className={`transition-transform hover:-translate-y-0.5 hover:text-gold-600 ${
+                   isScrolled ? 'text-navy-900' : 'text-white'
+                 }`}
                  aria-label="WhatsApp"
                >
                  <MessageCircle size={20} />
@@ -111,7 +119,9 @@ const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-navy-900 p-2 hover:bg-slate-100 rounded-md transition-colors"
+            className={`md:hidden p-2 hover:bg-white/20 rounded-md transition-colors ${
+              isScrolled ? 'text-navy-900' : 'text-white'
+            }`}
             onClick={() => setIsMobileMenuOpen(true)}
             aria-label="Abrir menu"
           >
@@ -122,7 +132,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Sidebar Overlay */}
       <div 
-        className={`fixed inset-0 bg-navy-950/60 backdrop-blur-sm z-50 transition-opacity duration-500 md:hidden ${
+        className={`fixed inset-0 bg-navy-950/40 backdrop-blur-[2px] z-50 transition-opacity duration-500 md:hidden ${
           isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsMobileMenuOpen(false)}
@@ -130,8 +140,12 @@ const Header: React.FC = () => {
 
       {/* Mobile Sidebar Drawer */}
       <div 
-        className={`fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-white/80 backdrop-blur-xl shadow-2xl z-50 transform transition-transform duration-500 ease-in-out md:hidden flex flex-col border-l border-white/40 ${
+        className={`fixed top-0 right-0 h-full w-[85%] max-w-[320px] shadow-2xl z-50 transform transition-all duration-500 ease-in-out md:hidden flex flex-col border-l border-white/20 ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        } ${
+          isScrolled 
+            ? 'bg-white' 
+            : 'bg-white/20 backdrop-blur-xl'
         }`}
       >
         {/* Sidebar Header */}
