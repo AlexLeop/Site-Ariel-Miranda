@@ -20,10 +20,16 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Format message for WhatsApp
-    const text = `*Novo Contato via Site*\n\n*Nome:* ${formState.name}\n*Email:* ${formState.email}\n*Telefone:* ${formState.phone}\n*Mensagem:* ${formState.message}`;
-    const whatsappUrl = `https://wa.me/55${CONTACT_INFO.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(text)}`;
-    window.open(whatsappUrl, '_blank');
+    
+    // Prepare email content
+    const subject = `Contato via Site - ${formState.name}`;
+    const body = `Nome: ${formState.name}\n` +
+                 `Email: ${formState.email}\n` +
+                 `Telefone: ${formState.phone}\n\n` +
+                 `Mensagem:\n${formState.message}`;
+
+    // Open default email client
+    window.location.href = `mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
